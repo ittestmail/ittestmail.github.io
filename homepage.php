@@ -1,4 +1,16 @@
-<!doctype html>
+<?php
+// Initialize the session
+session_start();
+ 
+// Check if the user is logged in, if not then redirect him to login page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: index.php");
+    exit;
+}
+?>
+
+
+<!doctype html> 
 <html lang="en">
 
 <head>
@@ -39,7 +51,7 @@
                             <a id="search_1" href="javascript:void(0)"><i class="ti-search"></i></a>
                         </div>
                         <div class="logo">
-                            <a href="homepage.html"><img src="img/logo.png" alt="#"></a>
+                            <a href="index.html"><img src="img/logo.png" alt="#"></a>
                         </div>
                         <span class="menu-trigger visible-xs">
                             <span></span>
@@ -61,6 +73,10 @@
                                         <li><a href="single-blog.html">single blog</a></li>
                                         <li><a href="elements.html">elements</a></li>
                                         <li><a href="contact.html">contact</a></li>
+                                        <li><a href="index.php">inloggen</a></li>
+                                        <li><a href="contact.html">registreer</a></li>
+                                        <li><a href="logout.php">uitloggen</a></li>
+                                        <li><br><br><br><a href="homepage.php" class="ti-user"><br><?php echo $_SESSION['username']; ?></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -77,7 +93,7 @@
                     <span class="ti-close" id="close_search" title="Close Search"></span>
                 </form>
             </div>
-        </div>
+        </div>z
     </header>
     <!-- Header part end-->
 
@@ -89,7 +105,7 @@
                     <div class="banner_text">
                         <div class="banner_text_iner">
                             <h5>ARCHITECTURE + DESIGN</h5>
-                            <h1>HEAVEN X LEATEST
+                            <h1>PROJECT X LEATEST
                                 PROJECT</h1>
                             <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor
                                 incididunt ut labore et dolore magna aliqua.</p>
@@ -165,7 +181,7 @@
     <div class="about_part section_bg">
         <div class="container-fluid">
             <div class="row justify-content-end">
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-6 col-md-6">
                     <div class="about_part_text">
                         <h2>About Us</h2>
                         <p>Living. Over. He god, living a. Creature that appear place creeping upon.
@@ -175,16 +191,22 @@
                         <a href="#" class="btn_1">learn more <span><img src="img/icon/left.svg" alt=""></span> </a>
                     </div>
                 </div>
-                <div class="col-lg-7 col-md-6">
-                    <div class="about_img">
-                        <img src="img/about_overlay.png" alt="#">
+                <div class="col-lg-6 col-md-6">
+                <div class="about_part_text">
+                        <h2>About Us</h2>
+                        <p>Living. Over. He god, living a. Creature that appear place creeping upon.
+                            It you said seas every creeping and a life shall unto, years hath seed be
+                            called light him cattle. They're cattle creepeth void given rule evening
+                            stars midst saying light greater</p>
+                        
+                        <a href="#" class="btn_1">learn more <span><img src="img/icon/left.svg" alt=""></span> </a>
                     </div>
+                </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- about part end-->
-
 
     <!-- service part start-->
     <section class="service_part">
@@ -281,7 +303,7 @@
                                     <img src="img/project/project_1.png" alt="#">
                                     <div class="single_project_text">
                                         <img src="img/client/client_2.png" class="client_img" alt="">
-                                        <a href="#" class="admin_name">jhon doe</a>
+                                        <a href="#" class="admin_name">Ayhan Ozdemir</a>
                                         <span>Project maneger</span>
                                         <p>Lorem ipsum dolor sit amet lorem consectetur adipiscing look. </p>
                                         <a href="single_project.html" class="btn_1">learn more <span><img
@@ -353,7 +375,30 @@
                             <div class="row">
                                 <div class="col-lg-7">
                                     <div class="single_img">
-                                        <a href="blog.html"><img src="img/blog/blog_1.png" alt="#"></a>
+                                        <a href="blog.html"><img src="img/icon/programmer.jpg" alt="#"></a>
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-7">
+                                    <div class="single_project_text">
+                                        <div class="single_project_tittle">
+                                            <h4> <a href="blog.html">Ayhan Ozedemir</a></h4>
+                                            <p>Farmar x (ceo)</p>
+                                            <span>May 02 2019</span>
+                                        </div>
+                                        <p>According to the research firm Frost & Sullivan all the estimated size
+                                            of the North American used test and measurement equipment market was
+                                            $446.4 million 2004 and is estimated to to $654.5 milliocompanies an
+                                            governmentsprocured and mt instruments.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_blog_post">
+                            <div class="row">
+                                <div class="col-lg-7">
+                                    <div class="single_img">
+                                        <a href="blog.html"><img src="img/icon/programmer.jpg" alt="#"></a>
 
                                     </div>
                                 </div>
@@ -376,30 +421,7 @@
                             <div class="row">
                                 <div class="col-lg-7">
                                     <div class="single_img">
-                                        <a href="blog.html"><img src="img/blog/blog_1.png" alt="#"></a>
-
-                                    </div>
-                                </div>
-                                <div class="col-lg-7">
-                                    <div class="single_project_text">
-                                        <div class="single_project_tittle">
-                                            <h4> <a href="blog.html">john deo</a></h4>
-                                            <p>Farmar x (ceo)</p>
-                                            <span>May 02 2019</span>
-                                        </div>
-                                        <p>According to the research firm Frost & Sullivan all the estimated size
-                                            of the North American used test and measurement equipment market was
-                                            $446.4 million 2004 and is estimated to to $654.5 milliocompanies an
-                                            governmentsprocured and mt instruments.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single_blog_post">
-                            <div class="row">
-                                <div class="col-lg-7">
-                                    <div class="single_img">
-                                        <a href="blog.html"><img src="img/blog/blog_1.png" alt="#"></a>
+                                        <a href="blog.html"><img src="img/icon/programmer.jpg" alt="#"></a>
 
                                     </div>
                                 </div>
@@ -467,13 +489,12 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="map_iner">
-                        <div class="map"></div>
-                    </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2464.1858357880296!2d4.2921068161493325!3d51.857563279694226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c4496214eaaaab%3A0xe39c6bb7fd0dcbb5!2sJorr-IT%20Solutions!5e0!3m2!1snl!2snl!4v1575376157804!5m2!1snl!2snl" width="100%" height="600" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
                 </div>
             </div>
         </div>
     </section>
+    
     <!-- map us part end-->
 
     <!-- footer part start-->
