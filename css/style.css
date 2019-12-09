@@ -2512,7 +2512,7 @@ ul {
 .banner_part {
 	height: 890px;
 	position: relative;
-	background-image: url(../img/Front_company.PNG);
+	background-image: url(../img/bert-sz-rhNff6hB41s-unsplash.jpg);
 	background-repeat: no-repeat;
 	background-size: 100% auto;
 	background-position: center;
@@ -2975,7 +2975,7 @@ ul {
 /* line 1, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_service_part.scss */
 .service_part {
 	padding: 45px 0px 130px;
-	background-image: url(../img/services_bg.png);
+	
 	background-position: center left;
 	background-size: contain;
 	background-repeat: no-repeat;
@@ -3434,7 +3434,7 @@ ul {
 .blog_part {
 	position: relative;
 	padding: 0 0 140px;
-	background: url(../img/blog/blog_bg.png);
+	background: url(../img/project_bg.png);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: content;
@@ -6234,3 +6234,23 @@ h6 {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+.counter{
+	display: none;
+}
+
+
+.profile-link{
+	text-transform: capitalize;
+font-size: 20px;
+line-height: 1.8;
+color:
+#100060;
+font-weight: 600;
+letter-spacing: -0.12px;
+margin: 10px 0px;
+}
+.profile-link:hover{
+	color: #ff7e00;
+	de
+}

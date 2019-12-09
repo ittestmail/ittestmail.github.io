@@ -56,7 +56,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $confirm_password_err = "Please confirm password.";     
     } else{
         $confirm_password = trim($_POST["confirm_password"]);
-        if(empty($password_err) && ($password != $confirm_password)){
+        if(e\mpty($password_err) && ($password != $confirm_password)){
             $confirm_password_err = "Password did not match.";
         }
     }
@@ -84,6 +84,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             }
         }
          
+        
         // Close statement
         mysqli_stmt_close($stmt);
     }
